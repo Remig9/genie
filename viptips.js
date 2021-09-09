@@ -19,16 +19,10 @@ import {PepperContent} from '../component/pepperContent';
 import { Dropdown } from 'react-native-material-dropdown';
 
 export const Viptips = props => {
-  let data = [{
-    value: 'car',
-  }, {
-    value: 'go',
-  }, {
-    value: 'ear',
-  }];
+  
   const [active , setActive]=useState("Boxone")
   return (
-    <Container flex={1} backgroundColor={Colors.appwhite}>
+    <Container flex={1} backgroundColor={Colors.appWhite}>
    <Container
     height={9}
     width={100}
@@ -361,6 +355,7 @@ export const Viptips = props => {
     </H1>    
      </Container> 
 
+
      <Container
     height={23}
     width={100}
@@ -369,6 +364,7 @@ export const Viptips = props => {
     horizontalAlignment={'space-evenly'}
      direction={'row'}
       >
+     <TouchWrap onPress={()=> setActive('Boxone')}>
       <Container
     height={18}
     width={45}
@@ -378,7 +374,7 @@ export const Viptips = props => {
     borderWidth={1}
     borderColor={Colors.appUniqueblue}
     borderRadius={5}
-    // onPress={()=> setActive('Boxone')}
+    
       >
      <Container
     height={5}
@@ -389,7 +385,9 @@ export const Viptips = props => {
     borderRadius={5}
     marginLeft={0.4}
     >
-   <Container
+
+
+    {active=='Boxone'?(<Container
     height={5}
     width={10}
     backgroundColor={active=='Boxone'?Colors.appBlue:Colors.appWhite}
@@ -397,7 +395,9 @@ export const Viptips = props => {
     horizontalAlignment={'center'}
     borderRadius={5}
     borderBottomLeftRadius={20}
+    onPress={()=> setActive('Boxone')}
     >
+     
     
     <Ionicons
                   name="checkmark-outline"
@@ -407,7 +407,8 @@ export const Viptips = props => {
                   
                 /> 
 
-    </Container>    
+    </Container>  ):null}
+     
     </Container> 
     <Container
     height={10}
@@ -439,8 +440,10 @@ export const Viptips = props => {
       Per month
     </P>    
     </Container>
-    </Container>     
-      </Container> 
+    </Container>
+        </Container> 
+        </TouchWrap>
+        <TouchWrap onPress={()=> setActive('Boxtwo')}>
       <Container
     height={18}
     width={45}
@@ -450,7 +453,7 @@ export const Viptips = props => {
     borderWidth={1}
     borderColor={Colors.appUniqueblue}
     borderRadius={5}
-    onPress={()=> setActive('Boxtwo')}
+    
       >
  <Container
     height={5}
@@ -462,7 +465,8 @@ export const Viptips = props => {
     marginLeft={0.4}
     marginTop={-1.6}
     >
-   <Container
+    {active=='Boxtwo'?(<Container>
+      <Container
     height={5}
     width={10}
     backgroundColor={active=='Boxtwo'?Colors.appBlue:Colors.appWhite}
@@ -470,6 +474,7 @@ export const Viptips = props => {
     horizontalAlignment={'center'}
     borderRadius={5}
     borderBottomLeftRadius={20}
+    onPress={()=> setActive('Boxtwo')}
     >
    
       <Ionicons
@@ -480,6 +485,8 @@ export const Viptips = props => {
                   
                 /> 
     </Container>    
+    </Container>):null}
+   
     </Container> 
     <Container
     height={10}
@@ -514,7 +521,8 @@ export const Viptips = props => {
     </Container>     
 
 
-      </Container>   
+      </Container>
+      </TouchWrap>   
       </Container>
       <Container marginLeft={3}>
       <Button
